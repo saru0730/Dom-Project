@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM PROJECT</title>
+    <style>
+      button {
+        margin: 20px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Project Related to DOM</h1>
+    <button id="font" class="reset" onclick="font()">Change Font Color</button>
+    <button class="bgcolor reset" onclick="bgcolor()">
+      Change Background Color1
+    </button>
+    <button class="bgcolor reset" onclick="bgcolor()">
+      Change Background Color2
+    </button>
+    <button class="bold reset" onclick="bold()">Change Font to Bold</button>
+    <button class="orange reset" onclick="orange()">
+      Change Background Color
+    </button>
+    <button class="reset" onclick="reset()">Reset</button>
+
+    <script>
+      function font() {
+        let fontbtn = document.querySelector("#font");
+        fontbtn.style.color = "red";
+      }
+      function bgcolor() {
+        let bgcolorbtn = document.getElementsByClassName("bgcolor");
+        for (let i = 0; i < bgcolorbtn.length; i++) {
+          bgcolorbtn[i].style.backgroundColor = "pink";
+        }
+      }
+
+      function bold() {
+        let boldbtn = document.getElementsByClassName("bold")[0];
+        //for (let i = 0; i < boldbtn.length; i++) {
+        boldbtn.style.fontWeight = "bold";
+        //}
+      }
+
+      function orange() {
+        let orangebtn = document.getElementsByClassName("orange")[0];
+        //for (let i = 0; i < orangebtn.length; i++) {
+        orangebtn.style.backgroundColor = "grey";
+        // }
+      }
+      function reset() {
+        let resetbtn = document.getElementsByClassName("reset");
+        for (let i = 0; i < resetbtn.length; i++) {
+          resetbtn[i].style = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
